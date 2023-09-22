@@ -43,3 +43,5 @@ Harus memiliki dua rak buku, yaitu "Belum Selesai Dibaca" & "Selesai Dibaca"
   - [x] Custom dialog untuk konfirmasi hapus buku
   - [ ] Custom dialog untuk menampilkan detail buku
   - [ ] Dapat edit data buku
+- [ ] Bikin page untuk about, berisi tentang developer yang buat aplikasi tersebut
+- [ ] Bikin page untuk contact, berisi tentang contact developer yang buat aplikasi tersebut
