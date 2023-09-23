@@ -36,12 +36,11 @@ Harus memiliki dua rak buku, yaitu "Belum Selesai Dibaca" & "Selesai Dibaca"
 
 ### BONUSES + 5 Star
 
-- [ ] Tambahkan fitur pencarian buku untuk memfilter berdasarkan judul buku
+- [x] Tambahkan fitur pencarian buku untuk memfilter berdasarkan judul buku
 - [x] Bikin project tanpa starter pack project yang di buat oleh dicoding
 - [x] Kode di tulis dengan clean code tanpa ada komen yang masih aktif di dalam nya
 - [x] Ada improvisasi fitur seperti
   - [x] Custom dialog untuk konfirmasi hapus buku
-  - [ ] Custom dialog untuk menampilkan detail buku
-  - [ ] Dapat edit data buku
-- [ ] Bikin page untuk about, berisi tentang developer yang buat aplikasi tersebut
-- [ ] Bikin page untuk contact, berisi tentang contact developer yang buat aplikasi tersebut
+- [x] Bikin page untuk about, berisi tentang developer yang buat aplikasi tersebut
+- [x] Bikin page untuk contact, berisi tentang contact developer yang buat aplikasi tersebut
+- [ ] Bikin nigt mode untuk aplikasi tersebut
