@@ -123,6 +123,62 @@ function markAsComplete(id) {
   displayBooks();
 }
 
+// fitur mencari buku
+document.getElementById('searchForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Ambil data buku dari localStorage
+  const books = JSON.parse(localStorage.getItem('books')) || [];
+
+  // Ambil nilai dari input pencarian
+  const searchValue = document.getElementById('searchInput').value;
+
+  // Filter buku berdasarkan judul atau penulis
+  const filteredBooks = books.filter(book => {
+    const titleMatch = book.title.toLowerCase().includes(searchValue.toLowerCase());
+    const authorMatch = book.author.toLowerCase().includes(searchValue.toLowerCase());
+
+    return titleMatch || authorMatch;
+  });
+
+  // Ambil elemen di mana Anda ingin menampilkan hasil pencarian (misalnya, sebuah div dengan id "searchResults")
+  const searchResults = document.getElementById('searchResult');
+
+  // Bersihkan konten yang sudah ada di elemen tersebut
+  searchResults.innerHTML = '';
+
+  // Tampilkan hasil pencarian
+  filteredBooks.forEach(book => {
+    const bookHtml = `
+      <div class="p-4 mb-2 bg-slate-800 rounded-lg text-white">    
+        <h5 class="text-xl font-bold">${book.title}</h5>
+        <p class="text-md"><span class="font-semibold">Penulis</span> : ${book.author}</p>
+        <p class="text-md"><span class="font-semibold">Tahun terbit</span> : ${book.year}</p>
+        <div class="gap-x-4 flex mt-2">
+          <button class="rounded-md p-2 bg-green-500" onclick="markAsComplete(${book.id})">
+            ${book.isComplete ? 'Selesai' : 'Belum selesai'}
+          </button>
+          <button class="rounded-md p-2 bg-red-500" onclick="deleteBook(${book.id})">
+              Hapus
+          </button>
+        </div>
+      </div>
+    `;
+
+    searchResults.innerHTML += bookHtml;
+  });
+
+  // Tampilkan pesan "Tidak ada hasil" jika tidak ada buku yang sesuai
+  if (searchResults.innerHTML === '') {
+    searchResults.innerHTML = '<p class="text-center">Tidak ada hasil</p>';
+  }
+
+  // reset form
+  document.getElementById('searchForm').reset();
+});
+
+
+
 let year = new Date().getFullYear();
 document.getElementById('currentYear').textContent = year;
 
